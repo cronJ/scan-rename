@@ -2,3 +2,5 @@
 
 # Scan-Rename
 Little tool to rename PDF files by showing a preview of the first page.
+
+Tool is still in work.
