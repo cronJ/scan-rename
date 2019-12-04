@@ -13,8 +13,8 @@ class App:
         self.directory = ""
         self.list_of_files = []
 
-        self.name_label = Label(frame, text="Directory")
-        self.name_label.grid(row=0, column=0)
+        self.directory_label = Label(frame, text="Directory")
+        self.directory_label.grid(row=0, column=0)
         self.directory_entry = Entry(frame, width=90)
         self.directory_entry.grid(row=0, column=1)
         self.directory_btn = Button(frame,
