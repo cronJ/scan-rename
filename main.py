@@ -12,6 +12,7 @@ class App:
 
         self.directory = ""
         self.list_of_files = []
+        self.image = None
 
         self.directory_label = Label(frame, text="Directory")
         self.directory_label.grid(row=0, column=0)
@@ -35,8 +36,14 @@ class App:
                                  listvariable=self.list_of_files,
                                  selectmode=SINGLE,
                                  height=30,
-                                 width=100)
-        self.file_list.grid(row=3, column=0, columnspan=3)
+                                 width=50)
+        self.file_list.grid(row=3, column=0, columnspan=1)
+
+        self.canvas = Canvas(frame,
+                             bg='white',
+                             height=100,
+                             width=80)
+        self.canvas.grid(row=3, column=1, columnspan=2)
 
     def load_directory(self):
         self.directory = filedialog.askdirectory()
@@ -52,6 +59,12 @@ class App:
                 for self.element in self.file:
                     self.file_list.insert(END, self.element)
                     self.list_of_files.append(self.element)
+
+    def create_file_image(self):
+        self.image = None
+
+    def show_file_image(self):
+        self.canvas.create_image(100, 80, anchow=NW, image=self.image)
 
 
 root = Tk()
